@@ -10,7 +10,7 @@ public class RomanNumeral {
     private int numberToConvert;
     private HashMap<Character, Integer> toRoman;
     private LinkedHashMap<String, Integer>toNumber;
-
+    
    public RomanNumeral(String numAsString) {
        String invalidChars = "abefghjknopqrstuwyz";
        if (invalidChars.contains(numAsString) || numAsString.isEmpty()) {

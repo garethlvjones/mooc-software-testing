@@ -6,6 +6,26 @@ import org.junit.jupiter.api.Test;
 public class RomanNumeralTest {
     
     @Test
+    void singleNumber() {
+        RomanNumeral roman = new RomanNumeral("I");
+        Assertions.assertEquals(1,roman.convertToNum());
+    }
+    
+    @Test
+    void numberWithmanyDigits() {
+        RomanNumeral roman = new RomanNumeral("VIII");
+        Assertions.assertEquals(8,roman.convertToNum());
+    }
+    
+    @Test
+    void numberWithSubtractiveNotation() {
+        RomanNumeral roman = new RomanNumeral("iv");
+        Assertions.assertEquals(4,roman.convertToNum());
+        
+    }
+            
+    
+    @Test
     public void standardNums() {
         int result1 = new RomanNumeral("cccxxxii").convertToNum();
         Assertions.assertEquals(332,result1);
@@ -15,11 +35,11 @@ public class RomanNumeralTest {
         Assertions.assertEquals("mmmxcvii", new RomanNumeral(3097).convertToString());
     }
     
-//    @Test
-//    public void addFiveToZero() {
-//        int result = new GettingStarted().addFive(0);
-//        Assertions.assertEquals(5, result);
-//    }
+    @Test
+    public void simpleTests() {
+        Assertions.assertEquals(1,new RomanNumeral("i").convertToNum());
+        Assertions.assertEquals(5,new RomanNumeral("v").convertToNum());
+    }
 
 }
        // 3094      mmmxciv
